@@ -23,3 +23,16 @@ output: {
 `__dirname` 은 해당 파일이 존재하는 경로를 의미한다.  
 `clean: true` 는 구성이 바뀌었을 때 기존의 구성을 제거하는 의미이다.  
 기본적으로 `path` 와 `filename` 은 기본값이다.
+---
+index.html을 이용해 개발 서버를 열기 위해서는  
+- `html-webpack-plugin` 모듈을 설치 후  
+- `webpack.config.js` 파일에 import 시켜준 뒤  
+하위 속성에  
+```js
+plugin: [
+    new HtmlPlugin({
+      template: './index.html'
+    })
+  ]
+```
+부여해준다.
