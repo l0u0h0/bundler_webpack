@@ -36,3 +36,21 @@ plugin: [
   ]
 ```
 부여해준다.
+- `localhost`로 개발 서버를 열기 위해 하위 속성에  
+```js
+devServer: {
+    host: 'localhost'
+  }
+```
+---
+`static` 폴더를 `dist` 폴더에 복사에 서버에서 사용하기 위해  
+`copy-webpack-plugin` 모듈 설치 후 import,  
+하위 속성으로  
+```js
+new CopyPlugin({
+      patterns: [
+        { from: 'static' }
+      ]
+    })
+```
+`plugins` 속성 내부에 작성해준다.
