@@ -80,3 +80,11 @@ module: {
 - 순서는 `style-loader` 부터
 - `scss` 를 사용하기 위해서 모듈 두 개,  
 `sass-loader, sass`를 설치 후 모듈 속성에 `css-loader` 다음에 명시해준다.
+---
+- postcss, autoprefixer
+- `postcss, autoprefixer, postcss-loader` 모듈 설치
+- `postcss` 라는 스타일의 후처리를 도와주는 모듈 설치 후,  
+`autoprefixer` 라는 공급업체접두사를 자동으로 붙여주는 플러그인 설치,  
+그 다음 `postcss`를 사용하기 위해 `postcss-loader` 설치
+- 이 후 사용은 `parcel` 번들러에서 사용한 것 처럼 브라우저 버전을 명시해준 뒤  
+`.postcssrc.js` 파일을 생성한 뒤 모듈 명시해서 사용
