@@ -54,3 +54,27 @@ new CopyPlugin({
     })
 ```
 `plugins` 속성 내부에 작성해준다.
+---
+### module
+- `static` 폴더 안에 `css` 폴더를 만들어 스타일을 적용할 파일을 만들어 줄 수 있지만,  
+그냥 루트 경로에 `css` 폴더를 만든 후 모듈 두 개,  
+`css-loader, style-loader` 를 설치 후  
+```js
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  },
+```
+- `css-loader`  
+- `main.js` 에서 import 해서 css 파일을 사용할 때 js에서는 css를 해석할 수 없기에  
+그것을 js에서 해석하는 용도로 사용됨.
+- `style-loader`
+- html의 스타일 태그 부분에 삽입할 수 있도록 하는 역할
+- 순서는 `style-loader` 부터
