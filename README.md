@@ -78,3 +78,5 @@ module: {
 - `style-loader`
 - html의 스타일 태그 부분에 삽입할 수 있도록 하는 역할
 - 순서는 `style-loader` 부터
+- `scss` 를 사용하기 위해서 모듈 두 개,  
+`sass-loader, sass`를 설치 후 모듈 속성에 `css-loader` 다음에 명시해준다.
