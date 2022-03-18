@@ -88,3 +88,27 @@ module: {
 그 다음 `postcss`를 사용하기 위해 `postcss-loader` 설치
 - 이 후 사용은 `parcel` 번들러에서 사용한 것 처럼 브라우저 버전을 명시해준 뒤  
 `.postcssrc.js` 파일을 생성한 뒤 모듈 명시해서 사용
+---
+### babel
+- `@babel/core, @babel/preset-env, @babel/plugin-transform-runtime`  
+모듈 설치 후 `.babelrc.js` 파일 생성한 뒤 다음 코드 명시
+```js
+module.exports = {
+  presets: ['@babel/preset-env'],
+  plugins: [
+    ['@babel/plugin-transform-runtime']
+  ]
+}
+```
+- `plugins` 는 2차원 배열의 형태로 명시
+- `webpack` 이 `babel` 을 읽을 수 있도록 설정 파일에 `rules` 객체에  
+```js
+{
+  test: /\.js$/,
+    use: [
+      'babel-loader'
+    ]
+}
+```
+작성해준다.
+- `babel-loader` 모듈 또한 설치해줘야 한다.
